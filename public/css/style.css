@@ -52,12 +52,8 @@ header h3 a:hover {
 }
 
 .joke-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 700px;
-    width: 1200px;
+    min-height: 700px;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
