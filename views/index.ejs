@@ -39,9 +39,12 @@
                     <p>Category: <%= data.category %></p>
                     <div class="joke-content">
                         <% if(data.joke) { %>
+                            <p class="joke"><strong>Joke</strong></p>
                             <p><%= data.joke %></p>
                         <% } else { %>
+                            <p class="setup"><strong>Setup</strong></p>
                             <p><%= data.setup %></p>
+                            <p class="delivery"><strong>Delivery</strong></p>
                             <p><%= data.delivery %></p>
                         <% } %>
                     </div>

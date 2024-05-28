@@ -48,3 +48,15 @@ header, main {
 .joke-content p {
     font-size: 18px;
 }
+
+.joke strong {
+    font-size: 10px;
+}
+
+.setup strong {
+    font-size: 10px;
+}
+
+.delivery strong {
+    font-size: 10px;
+}
