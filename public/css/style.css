@@ -1,0 +1,13 @@
+:root {
+    --fc-main: #EEEEEE;
+    --fc-secondary: #373A40;
+    --fc-accent: #DC5F00;
+
+    --bgc: #686D76;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
