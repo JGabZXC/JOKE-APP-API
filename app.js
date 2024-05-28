@@ -1,5 +1,6 @@
 import axios from "axios";
 import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
@@ -8,26 +9,35 @@ const port = 3000;
 const URL = 'https://v2.jokeapi.dev';
 
 // Static
-app.use(express.static('public'));
+app.use(express.static("public"));
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route
-app.get('/', async (req, res) => {
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.post('/', async (req, res) => {
     try {
-        const response = await axios.get(URL + '/joke/Any');
+        const type = req.body.type;
+        const result = await axios.get(URL + `/joke/${type}`);
         const data = {
-            category: JSON.stringify(response.data.category),
-            joke: JSON.stringify(response.data.joke),
-            setup: JSON.stringify(response.data.setup),
-            delivery: JSON.stringify(response.data.delivery)
+            type: result.data.type,
+            category: result.data.category,
+            joke: result.data.joke,
+            setup: result.data.setup,
+            delivery: result.data.delivery
         }
-        res.render('index.ejs', {data});  
+        console.log(result.data);
+        res.render('index.ejs', { data });
     } catch (error) {
         res.send(error);
     }
-    
 });
 
 // Listen on Port 3000
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });
