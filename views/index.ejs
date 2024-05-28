@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Joke APP</title>
 </head>
+
 <body>
     <header>
         <h1>Welcome to Generate Random Joke on Refresh</h1>
         <h3>I used <a href="https://v2.jokeapi.dev/">JokeAPI</a></h3>
     </header>
 
-    <main class="container">
-        <section class="items">
-            <p>Joke Category: <%= data.category %></p>
-            <p><%= data.joke %></p>
-            <p><%= data.setup %></p>
-            <p><%= data.delivery %></p>
-        </section>
+    <main class="joke-container">
+        <div class="division">
+            <section class="joke-items">
+                <div class="joke-category">
+                    <p>Joke Category: <%= data.category %>
+                    </p>
+                </div>
+                <div class="joke-content">
+                    <p>
+                        <%= data.joke %>
+                    </p>
+                    <p>
+                        <%= data.setup %>
+                    </p>
+                    <p>
+                        <%= data.delivery %>
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
 </body>
+
 </html>
