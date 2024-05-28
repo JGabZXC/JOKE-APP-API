@@ -4,6 +4,7 @@
     --fc-main: #EEEEEE;
     --fc-secondary: #373A40;
     --fc-accent: #DC5F00;
+    --fc-accent-light: #ef6700;
 
     --bgc: #686D76;
 
@@ -34,6 +35,48 @@ header, main {
     background-color: burlywood;
 }
 
+.category-con h3 {
+    font-weight: 600;
+}
+
+.form-select-con {
+    display: inline-block;
+    background-color: var(--fc-secondary);
+    min-width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.form-select {
+    cursor: pointer;
+    background-color: var(--fc-secondary);;
+    color: var(--fc-main);
+    border: none;
+    width: 180px;
+    font-family: var(--ff-main);
+    font-size: 20px;
+}
+
+.button-con {
+    margin-top: 5px;
+}
+
+.button-con button {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--fc-accent);
+    color: var(--fc-main);
+    padding: 10px 20px;
+    border: none;
+    font-family: var(--ff-main);
+    font-size: 20px;
+    width: 190px;
+}
+
+.button-con button:hover {
+    background-color: var(--fc-accent-light);
+}
+
 .container {
     background-color: var(--fc-secondary);
     border-radius: 20px;
@@ -41,12 +84,16 @@ header, main {
     margin-top: 50px;
 }
 
+.container p {
+    font-size: 23px;
+}
+
 .joke-content {
     margin-top: 50px;
 }
 
 .joke-content p {
-    font-size: 18px;
+    font-size: 23px;
 }
 
 .joke strong {
