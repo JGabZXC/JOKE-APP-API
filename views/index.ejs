@@ -10,28 +10,53 @@
 
 <body>
     <header>
-        <h1>Welcome to Generate Random Joke on Refresh</h1>
-        <h3>I used <a href="https://v2.jokeapi.dev/">JokeAPI</a></h3>
+        <h1>Welcome to Generate Random Joke</h1>
+        <h3>Credits to <a href="https://v2.jokeapi.dev/">JokeAPI</a></h3>
     </header>
 
     <main class="joke-container">
         <div class="division">
-            <section class="joke-items">
-                <div class="joke-category">
-                    <p>Joke Category: <%= data.category %>
-                    </p>
+            <form action="/" method="post">
+                <div class="category-con">
+                        <h3>Select Category</h3>
+                    <div class="form-select-con">
+                        <select name="type" class="form-select">
+                            <option value="any" data-display="Select">Any</option>
+                            <option value="programming">Programming</option>
+                            <option value="misc">Misc</option>
+                            <option value="dark">Dark</option>
+                            <option value="pun">Pun</option>
+                            <option value="spooky">Spooky</option>
+                            <option value="christmas">Christmas</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="joke-content">
-                    <p>
-                        <%= data.joke %>
-                    </p>
-                    <p>
-                        <%= data.setup %>
-                    </p>
-                    <p>
-                        <%= data.delivery %>
-                    </p>
+                <div class="button-con">
+                    <button type="submit" class="form-submit">Submit</button>
                 </div>
+            </form>
+            <section class="container">
+                <% if(locals.data) { %>
+                    <p>Type: <%= data.type %></p>
+                    <p>Category: <%= data.category %></p>
+                    <div class="joke-content">
+                        <% if(data.joke) { %>
+                            <p class="joke"><strong>Joke</strong></p>
+                            <p><%= data.joke %></p>
+                        <% } else { %>
+                            <p class="setup"><strong>Setup</strong></p>
+                            <p><%= data.setup %></p>
+                            <p class="delivery"><strong>Delivery</strong></p>
+                            <p><%= data.delivery %></p>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <p>nothing to see here</p>
+                <% } %>
+
+                <% if (locals.error) { %>
+                    <p>There's an error!</p>
+                <% } %>
             </section>
         </div>
     </main>

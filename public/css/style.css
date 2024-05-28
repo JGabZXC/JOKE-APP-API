@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --fc-main: #EEEEEE;
     --fc-secondary: #373A40;
     --fc-accent: #DC5F00;
+    --fc-accent-light: #ef6700;
 
     --bgc: #686D76;
+
+    --ff-main: "Poppins", sans-serif;;
 }
 
 * {
@@ -13,68 +18,92 @@
 }
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: var(--ff-main);
     background-color: var(--bgc);
 }
 
 header, main {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
     color: var(--fc-main);
 }
 
-header {
-    text-align: center;
+.division {
+    border-radius: 25px;
+    padding: 25px;
+    background-color: burlywood;
 }
 
-header h1 {
-    text-transform: uppercase;
+.category-con h3 {
+    font-weight: 600;
 }
 
-header h3 {
-    margin-top: 10px;
-}
-
-header h3 a {
-    color: var(--fc-secondary);
-    background-color: var(--fc-main);
-    border-radius: 20px;
-    padding: 5px 10px;
-    letter-spacing: 2px;
-    text-decoration: none;
-    transition: .5s ease;
-}
-
-header h3 a:hover {
-    color: var(--fc-main);
-    background-color: var(--fc-accent);
-}
-
-.joke-container {
-    min-height: 700px;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-select-con {
+    display: inline-block;
     background-color: var(--fc-secondary);
-    border-radius: 80px;
-    padding: 50px;
+    min-width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
 }
 
-.joke-items p {
-    font-size: 30px;
+.form-select {
+    cursor: pointer;
+    background-color: var(--fc-secondary);;
+    color: var(--fc-main);
+    border: none;
+    width: 180px;
+    font-family: var(--ff-main);
+    font-size: 20px;
 }
 
-.joke-category {
-    color: var(--fc-accent);
+.button-con {
+    margin-top: 5px;
+}
+
+.button-con button {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--fc-accent);
+    color: var(--fc-main);
+    padding: 10px 20px;
+    border: none;
+    font-family: var(--ff-main);
+    font-size: 20px;
+    width: 190px;
+}
+
+.button-con button:hover {
+    background-color: var(--fc-accent-light);
+}
+
+.container {
+    background-color: var(--fc-secondary);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.container p {
+    font-size: 23px;
 }
 
 .joke-content {
     margin-top: 50px;
 }
 
+.joke-content p {
+    font-size: 23px;
+}
 
+.joke strong {
+    font-size: 10px;
+}
 
+.setup strong {
+    font-size: 10px;
+}
 
-
+.delivery strong {
+    font-size: 10px;
+}
